@@ -1,18 +1,19 @@
 class UsersController < ApplicationController 
   
-  def show
-    @user = User.find(params[:id])
+   def show
+     @user = User.find(params[:id])
     
-  end
+   end
   
   def new
     @user = User.new
   end
   
   def create
+   
     @user = User.new(user_params)
-    #if-else here allows handling of cases of failure/success based on value of @user.save
-    if @user.save #if @user.save is true
+    if @user.save
+      log_in @user
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else
