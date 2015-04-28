@@ -1,9 +1,7 @@
 require 'test_helper'
 
 class UsersEditTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+
   def setup
     @user = users(:michael)
   end
@@ -35,6 +33,8 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     @user.reload
     assert_equal @user.name, name
     assert_equal @user.email, email
+    assert_equal session[:forwarding_url], nil
+    
   end
   
   

@@ -52,7 +52,7 @@ class UsersController < ApplicationController
     #below code returns a version of params hash with only permitted attributes
     def user_params
       params.require(:user).permit(:name, :email, :password, 
-                                  :password_confirmation)
+                                  :password_confirmation, :admin)
     end
     
     def logged_in_user
