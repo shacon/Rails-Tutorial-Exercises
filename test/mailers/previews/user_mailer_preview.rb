@@ -6,10 +6,9 @@ class UserMailerPreview < ActionMailer::Preview
     user = User.first
     user.activation_token = User.new_token
     UserMailer.account_activation(user)
-
   end
 
-  # Preview this email at http://http://rails-tutorial-c9-shacon.c9.io/rails/mailers/user_mailer/password_reset
+  # Preview this email at http://rails-tutorial-c9-shacon.c9.io/rails/mailers/user_mailer/password_reset
 
   def password_reset
     user = User.first
